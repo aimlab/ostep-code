@@ -12,16 +12,13 @@ main(int argc, char *argv[])
     if (pid < 0)
         printf("error occurred!\n");
     else if (pid == 0) {
-        printf("I'm a child (pid:%d) of (pid:%d)\n", 
-                (int) getpid(), (int) getppid());
-        sleep(60);
-        printf("I'm a orphan (pid:%d), adopted by (pid:%d)\n", 
-                (int) getpid(), (int) getppid());
+        printf("Hi father! I'm a ZOMBIE (pid:%d)\n", (int) getpid());
         exit(0); //(1)
     } else {
-        sleep(20);
-        printf("The father (pid:%d) says goodbye to the child (pid:%d)\n", 
-                (int) getpid(), pid);
+        sleep(60);
+        wait(NULL); //(2)
+        printf("The father (pid:%d) collects the information of the 
+                ZOMBIE child (pid:%d)\n", (int) getpid(), pid);
     }
     return 0;
 }
