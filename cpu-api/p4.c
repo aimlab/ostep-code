@@ -23,6 +23,7 @@ main(int argc, char *argv[])
         printf("The father (pid:%d) says goodbye to the child (pid:%d)\n", 
                 (int) getpid(), pid);
     }
+    return 0;
 }
 
 
