@@ -1,8 +1,8 @@
 
-all: p1 p2 p3 p4
+all: p1 p2 p3 p4 orphan zombie
 
 clean:
-	rm -f p1 p2 p3 p4
+	rm -f p1 p2 p3 p4 orphan zombie
 
 p1: p1.c
 	gcc -o p1 p1.c -Wall
@@ -15,4 +15,10 @@ p3: p3.c
 
 p4: p4.c
 	gcc -o p4 p4.c -Wall
+
+orphan: orphan.c
+	gcc -o orphan orphan.c -Wall 
+
+zombie: zombie.c
+	gcc -o zombie zombie.c -Wall 
 
