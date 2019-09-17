@@ -17,8 +17,8 @@ main(int argc, char *argv[])
     } else {
         sleep(60);
         wait(NULL); //(2)
-        printf("The father (pid:%d) collects the information of the 
-                ZOMBIE child (pid:%d)\n", (int) getpid(), pid);
+        printf("The father (pid:%d) collects the information of the ZOMBIE child (pid:%d)\n", 
+               (int) getpid(), pid);
     }
     return 0;
 }
